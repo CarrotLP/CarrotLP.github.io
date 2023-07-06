@@ -1,0 +1,28 @@
+h1{
+    color:red;
+    text-align: center;
+}
+body{
+    background-color:aquamarine;
+}
+li{
+    color:blue
+}
+#greetings{
+    color:blue;
+}
+#aboutMe{
+    font-family:'Courier New', Courier, monospace;
+    color:purple;
+    font-weight:bold;
+}
+#link{
+    color: purple;
+}
+#button2{
+    border-radius: 12px;
+    border-color: white;
+}
+/*#hyperlink{
+    
+}*/

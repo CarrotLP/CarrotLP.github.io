@@ -35,4 +35,11 @@ document.getElementById('button2').onclick=set;
 function hyperlink(){
     window.open ('https://carrotlp.github.io/diamond-map/diamond-map.html', '_blank');
 }
-document.getElementById('hyperlink').onclick=hyperlink
+document.getElementById('hyperlink').onclick=hyperlink;
+
+function qna(id){
+    document.getElementById(id).style.visibility="visible";
+}
+
+document.getElementById("sea").onclick = function(){qna("fish")}
+document.getElementById("post").onclick = function(){qna("pe")}

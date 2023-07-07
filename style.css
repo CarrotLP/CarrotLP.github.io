@@ -23,6 +23,6 @@ li{
     border-radius: 12px;
     border-color: white;
 }
-/*#hyperlink{
-    
-}*/
+#fish, #pe{
+    visibility: hidden
+}

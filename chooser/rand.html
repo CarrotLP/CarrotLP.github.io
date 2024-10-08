@@ -1,0 +1,100 @@
+<head>
+    <title>
+        選擇困難症專科醫生
+    </title>
+</head>
+<body>
+    <h1>
+        選擇困難症專科醫生  
+    </h1>
+    <img src="think.png" id="think" style="display:none;" />
+    <br>
+    <style>
+        #lwy {
+            margin: 0 auto;
+        }
+        .image-container img {
+            display: inline-block;
+            width: 45%; /* You can adjust the width as needed */
+            margin: 10px;
+        }
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+    <div class="image-container">
+        <img src="lwy.webp" id="lwy" style="display:none;" />
+        <img src="hand.webp" id="hand" style="display:none;" />
+    </div>
+
+    <br><p>
+        每個選項中間包含一個空格
+    </p>
+    <textarea id="choices" name="w3review" rows="4" cols="50"></textarea>
+    <br>
+    <button onclick="show()">Enter</button>
+    <p id="ans"></p>
+</body>
+<script>
+    const windowWidth = window.innerWidth;
+    const windowHeight = window.innerHeight;
+
+    const width1 = 30;
+    const width2 = 10;
+    const height1 = 30;
+    const height2 = 10;
+
+    const imgWidth = (width1 / 100) * windowWidth;
+    const imgWidth2 = (width2 / 100) * windowWidth;
+    const imgWidth3 = (width2 / 100) * windowWidth;
+    const imgHeight = (height1 / 100) * windowHeight;
+    const imgHeight2 = (height2 / 100) * windowHeight;
+    const imgHeight3 = (height2 / 100) * windowHeight;
+
+    const image = document.getElementById('lwy');
+    const image2 = document.getElementById('hand');
+    const image3 = document.getElementById('think');
+    image.style.width = imgWidth + 'px';
+    image2.style.width = imgWidth2 + 'px';
+    image3.style.width = imgWidth3 + 'px';
+    image2.style.height = imgHeight2 + 'px';
+    image3.style.height = imgHeight3 + 'px';
+    image.style.height = imgHeight + 'px';
+    
+    function show(){
+        var choice = document.getElementById("choices").value
+        var choiceList = []
+        var start = 0
+        for (let i = 0; i < choice.length; i++){
+            if (choice[i] == " ") {
+                choiceList.push(choice.substring(start, i))
+                start = i+1
+            }
+            else if (i == choice.length-1) {
+                choiceList.push(choice.substring(start, i+1))
+            }
+        }
+
+        document.getElementById("lwy").style.display = "inline-block"
+        const image = document.getElementById("lwy")
+        
+        image.style.animation = 'spin 3s linear';
+
+
+        setTimeout(() => {
+                image.style.animation = '';  // Clear the animation
+                let x = Math.floor((Math.random() * choiceList.length))
+                document.getElementById("ans").innerHTML = choiceList[x]
+            }, 3000);
+            
+    }
+    
+    
+    
+
+</script>
